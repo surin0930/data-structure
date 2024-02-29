@@ -11,7 +11,7 @@ typedef struct TReeNode {
 	struct TreeNode* left, * right;
 }TreeNode;
 
-TreeNode n1 = { 1, NULL, NULL };		//{°¡¿îµ¥, ¿ŞÂÊ, ¿À¸¥ÂÊ}
+TreeNode n1 = { 1, NULL, NULL };		//{ê°€ìš´ë°, ì™¼ìª½, ì˜¤ë¥¸ìª½}
 TreeNode n2 = { 4, &n1, NULL };
 TreeNode n3 = { 16, NULL, NULL };
 TreeNode n4 = { 28, NULL,NULL };
@@ -45,15 +45,15 @@ void postorder(TreeNode* root) {
 }
 
 int main() {
-	printf("ÁßÀ§ ¼øÈ¸\n");
+	printf("ì¤‘ìœ„ ìˆœíšŒ\n");
 	inorder(root);
 	printf("\n\n");
 
-	printf("ÀüÀ§ ¼øÈ¸\n");
+	printf("ì „ìœ„ ìˆœíšŒ\n");
 	preorder(root);
 	printf("\n\n");
 
-	printf("ÈÄÀ§ ¼øÈ¸\n");
+	printf("í›„ìœ„ ìˆœíšŒ\n");
 	postorder(root);
 	printf("\n\n");
 	return 0;
