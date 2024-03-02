@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <malloc.h>
 
-// ³ëµå Å¸ÀÔÀ» ±¸Á¶Ã¼·Î Á¤ÀÇÇÑ´Ù.
+// ë…¸ë“œ íƒ€ì…ì„ êµ¬ì¡°ì²´ë¡œ ì •ì˜í•œë‹¤.
 typedef int element;
 
 typedef struct ListNode {
@@ -11,7 +11,7 @@ typedef struct ListNode {
 } ListNode;
 
 
-// ¾ÕºÎºĞ¿¡ ³ëµå »ğÀÔ
+// ì•ë¶€ë¶„ì— ë…¸ë“œ ì‚½ì…
 ListNode* insert_first(ListNode* head, int value)
 {
 	ListNode* p = (ListNode*)malloc(sizeof(ListNode)); 
@@ -21,7 +21,7 @@ ListNode* insert_first(ListNode* head, int value)
 	return head;
 }
 
-// ³ëµå pre µÚ¿¡ »õ·Î¿î ³ëµå »ğÀÔ
+// ë…¸ë“œ pre ë’¤ì— ìƒˆë¡œìš´ ë…¸ë“œ ì‚½ì…
 ListNode* insert(ListNode* head, ListNode* pre, element value)
 {
 	ListNode* p = (ListNode*)malloc(sizeof(ListNode));
@@ -31,7 +31,7 @@ ListNode* insert(ListNode* head, ListNode* pre, element value)
 	return head; 
 }
 
-// ¾ÕºÎºĞÀÇ ³ëµå Á¦°Å
+// ì•ë¶€ë¶„ì˜ ë…¸ë“œ ì œê±°
 ListNode* delete_first(ListNode* head)
 {
 	ListNode* removed;
@@ -42,7 +42,7 @@ ListNode* delete_first(ListNode* head)
 	return head; 
 }
 
-// pre°¡ °¡¸®Å°´Â ³ëµåÀÇ ´ÙÀ½ ³ëµå¸¦ »èÁ¦.
+// preê°€ ê°€ë¦¬í‚¤ëŠ” ë…¸ë“œì˜ ë‹¤ìŒ ë…¸ë“œë¥¼ ì‚­ì œ.
 ListNode* delete(ListNode* head, ListNode* pre)
 {
 	ListNode* removed;
@@ -52,7 +52,7 @@ ListNode* delete(ListNode* head, ListNode* pre)
 	return head; 
 }
 
-// ¸®½ºÆ® Ãâ·Â
+// ë¦¬ìŠ¤íŠ¸ ì¶œë ¥
 void print_list(ListNode* head)
 {
 	for (ListNode* p = head; p != NULL; p = p->link)
@@ -60,7 +60,7 @@ void print_list(ListNode* head)
 	printf("NULL \n");
 }
 
-// Æ¯Á¤ÇÑ °ªÀ» Å½»ö
+// íŠ¹ì •í•œ ê°’ì„ íƒìƒ‰
 ListNode* search_list(ListNode* head, element x)
 {
 	ListNode* p = head;
@@ -69,10 +69,10 @@ ListNode* search_list(ListNode* head, element x)
 		if (p->data == x)  return p;
 		p = p->link;
 	}
-	return  NULL;	// Å½»ö ½ÇÆĞ
+	return  NULL;	// íƒìƒ‰ ì‹¤íŒ¨
 }
 
-// ¸ŞÀÎ
+// ë©”ì¸
 int main(void)
 {
 	ListNode* head = NULL;
@@ -83,9 +83,9 @@ int main(void)
 	}
 
 	if (search_list(head, 3) != NULL)
-		printf("¸®½ºÆ®¿¡¼­ 3À» Ã£¾Ò½À´Ï´Ù. \n");
+		printf("ë¦¬ìŠ¤íŠ¸ì—ì„œ 3ì„ ì°¾ì•˜ìŠµë‹ˆë‹¤. \n");
 	else
-		printf("¸®½ºÆ®¿¡¼­ 3À» Ã£Áö ¸øÇß½À´Ï´Ù. \n");
+		printf("ë¦¬ìŠ¤íŠ¸ì—ì„œ 3ì„ ì°¾ì§€ ëª»í–ˆìŠµë‹ˆë‹¤. \n");
 
 	for (int i = 0; i < 5; i++) {
 		head = delete_first(head);
